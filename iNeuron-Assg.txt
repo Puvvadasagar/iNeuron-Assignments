@@ -1,0 +1,141 @@
+package ai.iNeuron;
+
+import java.util.Arrays;
+
+public class StringProgs {
+
+	public static void main(String[] args) {
+
+		System.out.println("Reverse a String");
+		
+		String s1="iNeuron";
+		String s2="";
+		char arr[]=s1.toCharArray();
+		for(int i=arr.length-1;i>=0;i--) {
+			s2=s2+arr[i];
+		}
+		System.out.println(s2);
+		
+		System.out.println("********************");
+		
+		System.out.println("Reverse a sentence while preserving the position");
+		
+		String s3="Think Twice";
+		String s4="";
+		String[] a=s3.split(" ");
+		for(int i=a.length-1;i>=0;i--) {
+			s4=s4+a[i]+" ";
+		}
+		System.out.println(s4);
+		
+		System.out.println("********************");
+		
+		System.out.println("Check if the String is Anagram or not");
+		
+		String s5 = new String("SAGAR");
+		String s6 = new String("EARTH");
+		Boolean status;
+		
+		if(s5.length() != s6.length())
+		{
+			System.out.println("Not an anagram");
+		}
+		else {
+			char ar1[]=s5.toCharArray();
+			char ar2[]=s6.toCharArray();
+			Arrays.sort(ar1);
+			Arrays.sort(ar2);
+			status = Arrays.equals(ar1, ar2);
+			if(status == true) {
+				System.out.println("Strings are anagram");
+			}
+			else {
+				System.out.println("Not an anagram");
+			}	
+		}
+		
+		System.out.println("***********************");
+		
+		System.out.println("Check if string is panagram or not");
+		
+		String s7="abcdefghijklmnopqrstuvwxyz";
+		Boolean statusCheck=true;
+		for(char ch='a';ch<='z';ch++)
+		{
+			if(!s7.contains(String.valueOf(ch)))
+			{
+				statusCheck=false;
+				break;
+			}
+		}
+		if(statusCheck) {
+			System.out.println("It is Panagram string");
+		}
+		else {
+			System.out.println("Not an Panagram");
+		}
+		
+		System.out.println("*************************");
+		
+		System.out.println("repeatedly occuring characters in the given string");
+		
+		String s8 ="Refer";
+		char cha[]=s8.toLowerCase().toCharArray();
+		for(int i=0;i<cha.length;i++)
+		{
+			for(int j=i+1;j<cha.length;j++) {
+				if(cha[i] == cha[j]) {
+					System.out.println(cha[i]);
+				}
+			}	
+		}
+		
+		System.out.println("****************************");
+		
+		System.out.println("Sort a String Alphabetically");
+		
+		String s9="august";
+		char chr[]=s9.toCharArray();
+		Arrays.sort(chr);
+		System.out.println(chr);
+		
+		System.out.println("****************************");
+		
+		System.out.println("count the number of Vowels and Consonants of a String Value");
+		
+		String s10="Johnson";
+		int vowelCount=0;
+		int consonantCount=0;
+		char charr[]=s10.toLowerCase().toCharArray();
+		for(int i=0;i<+charr.length;i++)
+		{
+			if(charr[i] == 'a' || charr[i] =='e' || charr[i] =='i' || charr[i] == 'i' || charr[i] =='o' || 
+					charr[i] =='u') {
+				vowelCount++;
+			}
+			else {
+				consonantCount++;
+			}
+		}
+		System.out.println(vowelCount);
+		System.out.println(consonantCount);
+		
+		System.out.println("*****************************");
+		
+		System.out.println("count the special character");
+		
+		String s11="J$oh@n";
+		int scCount=0;
+		char chs[]=s11.toCharArray();
+		for(int i=0;i<s11.length();i++)
+		{
+			if(chs[i]>='A'&& chs[i]<='Z' || chs[i]>='a' && chs[i]<='z' || chs[i]>=0 && chs[i]<=9) {
+			}
+			else {
+				scCount++;
+			}
+		}
+		System.out.println(scCount);	
+	}
+
+}
